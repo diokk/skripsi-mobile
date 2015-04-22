@@ -11,7 +11,7 @@
     <Button
         style="?android:attr/buttonStyleSmall"
         android:layout_width="100dp"
-        android:layout_height="50dp"
+        android:layout_height="35dp"
         android:text="My account"
         android:textColor="#FFFFFF"
         android:drawableLeft="@android:drawable/ic_menu_agenda"
@@ -93,9 +93,9 @@
             android:id="@+id/bt_upload_materials"
             android:layout_gravity="right|top"
             android:layout_marginTop="8dp"
-            android:background="#4e4e4e"
+            android:background="#28b6e5"
             android:layout_marginRight="10dp"
-            android:drawableLeft="@android:drawable/ic_menu_upload"
+            android:drawableLeft="@android:drawable/ic_menu_upload_you_tube"
             />
     </FrameLayout>
 </RelativeLayout>
