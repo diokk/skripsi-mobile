@@ -8,8 +8,6 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
-import android.app.Activity;
-import android.content.Intent;
 
 import org.json.JSONArray;
 import org.json.JSONException;
@@ -35,6 +33,15 @@ public class MainActivity extends ActionBarActivity {
             public void onClick(View v) {
                 Intent myIntent = new Intent(v.getContext(),com.ditaoktaria.classic.pdfplayer.class);
                 startActivityForResult(myIntent,0);
+            }
+        });
+
+        Button hm = (Button) findViewById(R.id.bt_home_materials);
+        hm.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent myIntent2 = new Intent(v.getContext(), ManageMaterials.class);
+                startActivityForResult(myIntent2, 0);
             }
         });
 
