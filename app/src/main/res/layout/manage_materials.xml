@@ -51,7 +51,7 @@
             android:id="@+id/bt_add_folder"
             android:layout_gravity="left|top"
             android:background="#28b6e5"
-            android:layout_marginTop="8dp"
+            android:layout_marginTop="13dp"
             android:layout_marginLeft="10dp"
             android:drawableLeft="@android:drawable/ic_input_add"/>
 
@@ -97,5 +97,13 @@
             android:layout_marginRight="10dp"
             android:drawableLeft="@android:drawable/ic_menu_upload_you_tube"
             />
+
+        <ListView
+            android:layout_width="wrap_content"
+            android:layout_height="317dp"
+            android:id="@+id/material_list"
+            android:layout_marginTop="30dp"
+            android:layout_gravity="left|center_vertical"
+            android:choiceMode="none" />
     </FrameLayout>
 </RelativeLayout>

@@ -23,21 +23,11 @@ public class MainActivity extends ActionBarActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         StrictMode.enableDefaults();
-        responseTextView = (TextView) this.findViewById(R.id.responseTextView);
-
+        //responseTextView = (TextView) this.findViewById(R.id.responseTextView);
         //new GetAllLecturerTask().execute(new ApiConnector());
 
-        Button wv = (Button) findViewById(R.id.button_wv);
-        wv.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent myIntent = new Intent(v.getContext(),com.ditaoktaria.classic.pdfplayer.class);
-                startActivityForResult(myIntent,0);
-            }
-        });
-
-        Button hm = (Button) findViewById(R.id.bt_home_materials);
-        hm.setOnClickListener(new View.OnClickListener() {
+        Button lg = (Button) findViewById(R.id.bt_login);
+        lg.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Intent myIntent2 = new Intent(v.getContext(), ManageMaterials.class);
