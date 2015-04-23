@@ -30,8 +30,8 @@ public class MainActivity extends ActionBarActivity {
         lg.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent myIntent2 = new Intent(v.getContext(), ManageMaterials.class);
-                startActivityForResult(myIntent2, 0);
+                Intent myIntent = new Intent(v.getContext(), ManageMaterials.class);
+                startActivityForResult(myIntent, 0);
             }
         });
 

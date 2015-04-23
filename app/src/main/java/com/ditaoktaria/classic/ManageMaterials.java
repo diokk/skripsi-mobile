@@ -1,10 +1,13 @@
 package com.ditaoktaria.classic;
 
+import android.content.Intent;
 import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
 import android.widget.ArrayAdapter;
+import android.widget.Button;
 import android.widget.ListView;
 
 
@@ -23,6 +26,15 @@ public class ManageMaterials extends ActionBarActivity {
         ArrayAdapter<String> list_adapter = new ArrayAdapter<String>(this, android.R.layout.simple_list_item_1,list_values);
 
         material_list.setAdapter(list_adapter);
+
+        Button ac = (Button) findViewById(R.id.bt_account);
+        ac.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent myIntent = new Intent(v.getContext(), EditAccount.class);
+                startActivityForResult(myIntent, 0);
+            }
+        });
 
     }
 
