@@ -21,7 +21,7 @@ public class ApiConnectorCourse {
     {
         //URL for getting all Courses
 
-        String url = "http://10.0.0.61/classic/getAllCourses.php";
+        String url = "http://10.0.0.61/classicdevel/server/getAllCourses.php";
 
         // Get HttpResponse Object from URL.
         // Get HttpEntity from Http Response Object
