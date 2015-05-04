@@ -18,13 +18,15 @@ import java.lang.String;
 public class MainActivity extends ActionBarActivity {
 
     private TextView responseTextView;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         StrictMode.enableDefaults();
-        //responseTextView = (TextView) this.findViewById(R.id.responseTextView);
-        //new GetAllLecturerTask().execute(new ApiConnector());
+       //responseTextView = (TextView) this.findViewById(R.id.responseTextView);
+       // new GetAllLecturerTask().execute(new ApiConnector());
+
 
         Button lg = (Button) findViewById(R.id.bt_login);
         lg.setOnClickListener(new View.OnClickListener() {
@@ -37,6 +39,7 @@ public class MainActivity extends ActionBarActivity {
 
     }
 
+/*
     public void setTextToTextView(JSONArray jsonArray)
     {
         String s = "";
@@ -57,6 +60,7 @@ public class MainActivity extends ActionBarActivity {
     }
 
 
+*//*
     private class GetAllLecturerTask extends AsyncTask<ApiConnector,Long,JSONArray>
     {
         @Override
@@ -68,8 +72,8 @@ public class MainActivity extends ActionBarActivity {
 
         @Override
         protected void onPostExecute(JSONArray jsonArray) {
-            setTextToTextView(jsonArray);
+     //       setTextToTextView(jsonArray);
         }
-    }
+    }*/
 
 }
