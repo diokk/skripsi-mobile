@@ -60,9 +60,17 @@ public class MainActivity extends ActionBarActivity {
     }
 
 
-*//*
+*/
+    //iko idak usah dipanggil dak? kan lecturer? Iyap.
+    /*
     private class GetAllLecturerTask extends AsyncTask<ApiConnector,Long,JSONArray>
     {
+        @Override
+        protected void onPreExecute() {
+            // TODO: Show loading view here if you like.
+            super.onPreExecute();
+        }
+
         @Override
         protected JSONArray doInBackground(ApiConnector... params) {
 
@@ -73,6 +81,8 @@ public class MainActivity extends ActionBarActivity {
         @Override
         protected void onPostExecute(JSONArray jsonArray) {
      //       setTextToTextView(jsonArray);
+
+
         }
     }*/
 

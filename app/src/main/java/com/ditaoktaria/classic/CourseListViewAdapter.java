@@ -38,7 +38,16 @@ public class CourseListViewAdapter extends BaseAdapter {
 
     @Override
     public Object getItem(int position) {
-        return position;
+
+        try{
+
+        return this.dataArray.getJSONObject(position);}
+
+        catch (JSONException e) {
+            return e.getStackTrace();
+
+
+        }
     }
 
     @Override

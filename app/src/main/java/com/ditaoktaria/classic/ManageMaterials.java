@@ -25,7 +25,7 @@ public class ManageMaterials extends ActionBarActivity {
 
         this.material_list = (ListView) this.findViewById(R.id.material_list);
 
-        new getAllCourseTask().execute(new ApiConnectorCourse());
+        new getAllCourseTask().execute(new ApiConnector());
        /* String[] list_values = new String []{
                 "Algoritma Evolusi","Keamanan Jaringan","Pengembangan Aplikasi Perangkat Bergerak"
         };
@@ -49,20 +49,21 @@ public class ManageMaterials extends ActionBarActivity {
         this.material_list.setAdapter(new CourseListViewAdapter(jsonArray,this));
     }
 
+    //ambo pecik tarok di siko manggil asyn nyo
+
     private class getAllCourseTask extends AsyncTask<ApiConnector,Long,JSONArray>
     {
         protected JSONArray doInBackground(ApiConnector... params) {
             // it is executed on Background thread
-            return  params[0].GetAllLecturers();
+            //iko harusnyo manggil course, bukan lecture. tapi kalo course nyo error
+            return  params[0].GetAllCourses();
         }
         protected void onPostExecute(JSONArray jsonArray){
             setListAdapter(jsonArray);
         }
 
         //iko di tutorial idak ado, tapi kalo iko di hapus, error
-        public void execute(ApiConnectorCourse apiConnectorCourse) {
 
-        }
     }
 
 
