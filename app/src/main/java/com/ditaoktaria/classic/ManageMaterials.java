@@ -26,19 +26,21 @@ public class ManageMaterials extends ActionBarActivity {
         this.material_list = (ListView) this.findViewById(R.id.material_list);
 
         new getAllCourseTask().execute(new ApiConnector());
-       /* String[] list_values = new String []{
-                "Algoritma Evolusi","Keamanan Jaringan","Pengembangan Aplikasi Perangkat Bergerak"
-        };
-        ArrayAdapter<String> list_adapter = new ArrayAdapter<String>(this, android.R.layout.simple_list_item_1,list_values);
-
-        material_list.setAdapter(list_adapter);
-        */
 
         Button ac = (Button) findViewById(R.id.bt_account);
         ac.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Intent myIntent = new Intent(v.getContext(), EditAccount.class);
+                startActivityForResult(myIntent, 0);
+            }
+        });
+
+        Button pdf = (Button) findViewById(R.id.bt_materials);
+        pdf.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent myIntent = new Intent(v.getContext(), pdfplayer.class);
                 startActivityForResult(myIntent, 0);
             }
         });
