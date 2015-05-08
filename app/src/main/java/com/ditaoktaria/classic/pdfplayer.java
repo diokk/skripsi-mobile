@@ -7,6 +7,7 @@ import android.view.MenuItem;
 import android.net.Uri;
 import android.content.Intent;
 import android.webkit.WebView;
+import android.webkit.WebSettings;
 
 
 public class pdfplayer extends ActionBarActivity {
@@ -15,17 +16,20 @@ public class pdfplayer extends ActionBarActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_pdfplayer);
-
+/*
         Uri uri = Uri.parse("http://192.168.56.1/classicdevel/viewpdf.html");
         Intent intent = new Intent(Intent.ACTION_VIEW, uri);
+        webview.getSettings().setJavaScriptEnabled(true);
         startActivity(intent);
+        */
 
 
-/*
-        WebView webview = new WebView(this);
-        setContentView(webview);
-        webview.loadUrl("http://192.168.56.1/classicdevel/viewpdf.html");
-*/
+        WebView webview = (WebView) findViewById(R.id._webview);
+        //setContentView(webview);
+        webview.getSettings().setJavaScriptEnabled(true);
+        WebSettings webSettings = webview.getSettings();
+        webSettings.setJavaScriptEnabled(true);
+        webview.loadUrl("http://192.168.56.1/classicdevel/pdfjs/web/viewer.html");
 
 
     }
