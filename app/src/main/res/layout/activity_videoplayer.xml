@@ -9,9 +9,10 @@
     android:background="#000000"
     tools:context="com.ditaoktaria.classic.videoplayer">
 
-    <SurfaceView
-        android:id="@+id/surfView"
-        android:layout_width="fill_parent"
-        android:layout_height="fill_parent" />
+    <VideoView
+    android:id="@+id/myVideo"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:layout_centerInParent="true" />
 
 </RelativeLayout>

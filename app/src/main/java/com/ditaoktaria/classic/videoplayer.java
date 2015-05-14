@@ -13,53 +13,23 @@ import android.media.MediaPlayer.OnPreparedListener;
 import android.media.MediaPlayer;
 import android.media.AudioManager;
 
-public class videoplayer extends ActionBarActivity implements SurfaceHolder.Callback, OnPreparedListener {
+public class videoplayer extends ActionBarActivity {
 
-    private MediaPlayer mediaPlayer;
-    private SurfaceHolder vidHolder;
-    private SurfaceView vidSurface;
-    String vidAddress ="http://192.168.56.1/classicdevel/doraemon.mp4";
-    public void surfaceChanged(SurfaceHolder arg0, int arg1, int arg2, int arg3) {
-        // TODO Auto-generated method stub
-    }
-
-    @Override
-    public void surfaceCreated(SurfaceHolder arg0) {
-//setup
-        try {
-            mediaPlayer = new MediaPlayer();
-            mediaPlayer.setDisplay(vidHolder);
-            mediaPlayer.setDataSource(vidAddress);
-            mediaPlayer.prepare();
-            mediaPlayer.setOnPreparedListener(this);
-            mediaPlayer.setAudioStreamType(AudioManager.STREAM_MUSIC);
-        }
-        catch(Exception e){
-            e.printStackTrace();
-        }
-    }
-
-    @Override
-    public void surfaceDestroyed(SurfaceHolder arg0) {
-        // TODO Auto-generated method stub
-    }
-
-    @Override
-    public void onPrepared(MediaPlayer mp) {
-//start playback
-        mediaPlayer.start();
-    }
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_videoplayer);
+        VideoView vidView = (VideoView)findViewById(R.id.myVideo);
 
 
-        vidSurface = (SurfaceView) findViewById(R.id.surfView);
-        vidHolder = vidSurface.getHolder();
-        vidHolder.addCallback(this);
-
+        String vidAddress = "http://192.168.56.1/classicdevel/letitgo.mp4";
+        Uri vidUri = Uri.parse(vidAddress);
+        vidView.setVideoURI(vidUri);
+        vidView.start();
+        MediaController vidControl = new MediaController(this);
+        vidControl.setAnchorView(vidView);
+        vidView.setMediaController(vidControl);
 
     }
 
