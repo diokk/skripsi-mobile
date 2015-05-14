@@ -45,6 +45,15 @@ public class ManageMaterials extends ActionBarActivity {
             }
         });
 
+        Button vid = (Button) findViewById(R.id.bt_edit_materials);
+        vid.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent myIntent = new Intent(v.getContext(), videoplayer.class);
+                startActivityForResult(myIntent, 0);
+            }
+        });
+
     }
 
     public void setListAdapter(JSONArray jsonArray){
