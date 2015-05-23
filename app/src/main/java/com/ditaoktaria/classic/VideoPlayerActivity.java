@@ -3,12 +3,15 @@ package com.ditaoktaria.classic;
 import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
 import android.view.Menu;
+import android.text.TextUtils;
+import android.widget.EditText;
 import android.view.MenuItem;
 import android.widget.Toast;
 import io.vov.vitamio.LibsChecker;
 import io.vov.vitamio.MediaPlayer;
 import io.vov.vitamio.widget.MediaController;
 import io.vov.vitamio.widget.VideoView;
+
 
 import android.view.View;
 
@@ -19,11 +22,12 @@ public class VideoPlayerActivity extends ActionBarActivity {
 
     private String path = "http://192.168.56.1/classicdevel/video/caca.mp4";
     private VideoView mVideoView;
+    private EditText mEditText;
 
     @Override
     protected void onCreate(Bundle icicle) {
         super.onCreate(icicle);
-        if (!io.vov.vitamio.LibsChecker.checkVitamioLibs(this))
+        if (!LibsChecker.checkVitamioLibs(this))
             return;
         setContentView(R.layout.activity_video_view);
         mVideoView = (VideoView) findViewById(R.id.surface_view);
@@ -45,6 +49,18 @@ public class VideoPlayerActivity extends ActionBarActivity {
 
         }
 
+    }
+
+    public void startPlay(View view){
+        String url = mEditText.getText().toString();
+        path = url;
+        if(!TextUtils.isEmpty(url)){
+            mVideoView.setVideoPath(url);
+        }
+    }
+
+    public void openVideo (View View){
+        mVideoView.setVideoPath(path);
     }
 
 
