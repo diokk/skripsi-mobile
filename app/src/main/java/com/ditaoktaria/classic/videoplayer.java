@@ -14,15 +14,41 @@ import android.view.SurfaceHolder;
 import android.media.MediaPlayer.OnPreparedListener;
 import android.media.MediaPlayer;
 import android.media.AudioManager;
+import android.util.Log;
 
 public class videoplayer extends ActionBarActivity {
 
+    String TAG = "com.example.VideoPlayer";
+    protected void onStart(){
+        super.onStart();
+
+        final VideoView videoView =
+                (VideoView) findViewById(R.id.myVideo);
+
+        videoView.setVideoPath(
+                "http://192.168.56.1/classicdevel/video/rtcweb.mp4");
+
+        MediaController mediaController = new
+                MediaController(this);
+        mediaController.setAnchorView(videoView);
+        videoView.setMediaController(mediaController);
+
+        videoView.setOnPreparedListener(new MediaPlayer.OnPreparedListener()  {
+            @Override
+            public void onPrepared(MediaPlayer mp) {
+                Log.i(TAG, "Duration = " + videoView.getDuration());
+            }
+        });
+
+        videoView.start();
+
+    }
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_videoplayer);
-
+/*
         VideoView vidView = (VideoView)findViewById(R.id.myVideo);
 
 
@@ -33,7 +59,10 @@ public class videoplayer extends ActionBarActivity {
         MediaController vidControl = new MediaController(this);
         vidControl.setAnchorView(vidView);
         vidView.setMediaController(vidControl);
-        vidView.start();
+        vidView.start();*/
+
+
+
 
     }
 

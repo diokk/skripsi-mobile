@@ -49,7 +49,7 @@ public class ManageMaterials extends ActionBarActivity {
         vid.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent myIntent = new Intent(v.getContext(), videoplayer.class);
+                Intent myIntent = new Intent(v.getContext(), VideoPlayerActivity.class);
                 startActivityForResult(myIntent, 0);
             }
         });

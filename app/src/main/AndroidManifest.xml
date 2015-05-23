@@ -40,7 +40,7 @@
             android:label="@string/title_activity_videoplayer" >
         </activity>
         <activity
-            android:name=".VideoView"
+            android:name=".VideoPlayerActivity"
             android:label="@string/title_activity_video_view" >
         </activity>
     </application>
