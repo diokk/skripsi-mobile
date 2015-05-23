@@ -5,6 +5,8 @@ import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.net.Uri;
+import android.webkit.WebSettings;
+import android.webkit.WebView;
 import android.widget.MediaController;
 import android.widget.VideoView;
 import android.view.SurfaceView;
@@ -20,16 +22,18 @@ public class videoplayer extends ActionBarActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_videoplayer);
+
         VideoView vidView = (VideoView)findViewById(R.id.myVideo);
 
 
-        String vidAddress = "http://192.168.56.1/classicdevel/letitgo.mp4";
+        String vidAddress = "http://192.168.56.1/classicdevel/video/jaranan.mp4";
         Uri vidUri = Uri.parse(vidAddress);
         vidView.setVideoURI(vidUri);
-        vidView.start();
+
         MediaController vidControl = new MediaController(this);
         vidControl.setAnchorView(vidView);
         vidView.setMediaController(vidControl);
+        vidView.start();
 
     }
 
